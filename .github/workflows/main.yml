@@ -27,8 +27,9 @@ jobs:
       # Step 4: Ping Supabase
       - name: Ping Supabase
         env:
-          SUPABASE_URL: ${{secrets.PUBLIC_SUPABASE_URL}} # Supabase project URL
-          SUPABASE_KEY: ${{ secrets.NEXT_SERVICE_ROLE_KEY }} # Supabase service role key
+          SUPABASE_URL: ${{ secrets.PUBLIC_SUPABASE_URL }} # Supabase project URL
+          SUPABASE_KEY: ${{ secrets.SERVICE_ROLE_KEY }} # Supabase service role key
+          SUPABASE_TABLE: ${{ secrets.SUPABASE_TABLE }}
         run: |
           node -e "
           (async () => {
